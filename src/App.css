@@ -1,0 +1,27 @@
+* {
+    user-select: none;
+}
+
+body {
+    font-family: "Whitney SSm A", "Whitney SSm B", "AvenirNext-Regular", "Segoe UI", "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgba(30, 30, 30, 0.041);
+    margin: 2px 30px;
+    border-radius: 3px;
+}
+
+.App .body {
+    display: flex;
+    flex-direction: row;
+    background-color: #1E1E1E;
+
+}
+
+.clickable {
+    cursor: pointer;
+}

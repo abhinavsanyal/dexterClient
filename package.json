@@ -1,0 +1,57 @@
+{
+  "name": "flexiple-webeditor",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "jsonwebtoken": "^8.3.0",
+    "keyboardjs": "2.4.1",
+    "lodash": "^4.17.10",
+    "mime": "1.6.0",
+    "mobx": "5.0.3",
+    "mobx-react": "5.2.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-modal": "^3.5.1",
+    "react-monaco-editor": "^0.15.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "validatorjs": "^3.14.2",
+    "ws": "5.1.1",
+    "xterm": "^2.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": {
+    "/ws": {
+      "target": "ws://localhost:8080",
+      "ws": true
+    },
+    "/auth": {
+      "target": "http://localhost:8080"
+    },
+    "/admin": {
+      "target": "http://localhost:8080"
+    },
+    "/users": {
+      "target": "http://localhost:8080"
+    },
+    "/questions": {
+      "target": "http://localhost:8080"
+    },
+    "/terminals": {
+      "target": "ws://localhost:8080",
+      "ws": true
+    }
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "webpack": "^4.16.0",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
