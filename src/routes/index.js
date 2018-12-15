@@ -34,14 +34,7 @@ class Routes extends React.Component {
                     )}
                     />
 
-                    <Route exact strict path="/signup" render={(props) => (
-                        !isAdmin ? (
-                            <Redirect to="/adm"/>
-                        ) : (
-                            <SignupPage {...props}/>
-                        )
-                    )}
-                    />
+                 
 
                     <Route exact strict path="/adm" component={AdminLoginPage}/>
                     <Route exact strict path="/" component={LoginPage}/>
@@ -53,3 +46,12 @@ class Routes extends React.Component {
 }
 
 export default inject('loginStore')(observer(Routes));
+
+
+
+/* <Route exact strict path="/signup" render={(props) => (
+                      
+    <SignupPage {...props}/>
+
+)}
+/> */

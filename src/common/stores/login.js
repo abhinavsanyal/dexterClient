@@ -26,8 +26,12 @@ class LoginStore extends GenericFormStore {
     }
 
     loggedIn = false;
+    
+    loginFailed = false;
 
     isAdmin = false;
+
+    isLogin = true;
 
     ready = false;
 
@@ -40,6 +44,10 @@ class LoginStore extends GenericFormStore {
         this.form.fields.password.value = '';
     }
 
+    onRegister = () => {
+      
+        this.isLogin = !this.isLogin;
+    }
     logout = () => {
         this.loggedIn = false;
         this.isAdmin = false;
@@ -49,15 +57,19 @@ class LoginStore extends GenericFormStore {
 
     onSubmit = (history) => {
         const {fields} = this.form;
-
         if (_.isEmpty(fields.email.value) || _.isEmpty(fields.password.value)) {
             this.setError("invalid user email/password")
             return;
         }
         return axios.post("/auth", fields)
-            .then(res => this.setLoggedIn(res))
+        .then(res => {
+           
+            this.setLoggedIn(res)})
             .then(() => history.push("/question"))
             .catch(err => {
+      
+                this.loginFailed = true;
+          
                 if (err.response.data.errors)
                     this.setError(err.response.data.errors)
                 else
@@ -109,6 +121,8 @@ decorate(LoginStore, {
     form: observable,
     loggedIn: observable,
     isAdmin: observable,
+    isLogin: observable,
+    loginFailed: observable,
     ready: observable,
     setLoggedIn: action,
     setAdmin: action,

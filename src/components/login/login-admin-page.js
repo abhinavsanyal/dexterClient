@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import AdminLoginForm from './login-admin-form';
 import AdminNavigationBar from '../navbar/admin-navigationbar';
-import Footer from '../footer';
+// import Footer from '../footer';
 
 class AdminLoginPage extends Component {
 
@@ -12,7 +12,7 @@ class AdminLoginPage extends Component {
                     <AdminNavigationBar/>
                     <AdminLoginForm {...this.props} />
                 </div>
-                <Footer/>
+               
             </div>
         )
     }

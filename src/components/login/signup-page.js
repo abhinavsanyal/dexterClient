@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SignupForm from './signup-form';
 import AdminNavigationBar from '../navbar/admin-navigationbar';
-import Footer from '../footer';
+// import Footer from '../footer';
 
 class SignupPage extends Component {
 
@@ -12,7 +12,7 @@ class SignupPage extends Component {
                     <AdminNavigationBar/>
                     <SignupForm {...this.props} />
                 </div>
-                <Footer/>
+                
             </div>
         )
     }

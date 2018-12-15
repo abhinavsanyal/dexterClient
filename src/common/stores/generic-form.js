@@ -9,7 +9,10 @@ class FormStore {
         return data
     };
 
-    onFieldChange = (field, value) => {
+    onFieldChange = (event) => {
+
+        let field = event.target.name;
+        let value = event.target.value
         this.form.fields[field].value = value;
         var validation = new Validator(
             this.getFlattenedValues('value'),
@@ -34,3 +37,5 @@ decorate(FormStore, {
 });
 
 export default FormStore
+
+// field, value

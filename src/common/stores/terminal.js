@@ -47,6 +47,7 @@ class TerminalStore {
     }
 
     createTerminal(name, container, basecodedir) {
+        console.log('creating a terminal');
         return axios.post('/terminals/', {basecodedir: basecodedir})
             .then((res) => this.createSocket(this.socketURL, res.data, container))
             .then((term) => this.saveTerminal(name, term));

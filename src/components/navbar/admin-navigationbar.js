@@ -8,7 +8,7 @@ class AdminNavigationBar extends React.Component {
 
     confirmLogout = () => {
         const logout = window.confirm("Are you sure you want to logout");
-        console.log(logout);
+
         if (logout)
             this.props.loginStore.logout();
     }
